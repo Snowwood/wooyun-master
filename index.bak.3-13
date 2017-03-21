@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>乌云搜索|search from wooyun.org</title>
+<link href="./wooyun/bootstrap.css" rel="stylesheet" media="screen">
+<link href="./wooyun/site.min.css" rel="stylesheet">
+<link href="./wooyun/bootstrap-theme.min.css" rel="stylesheet">
+<script type="text/javascript" src="./wooyun/jquery-2.0.0.min.js"></script>
+<script type="text/javascript" src="./wooyun/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="http://59.64.79.248/static/#">乌云漏洞搜索</a>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+function search_bug_action() {
+var params = document.getElementById("key_input").value;
+var form_tmp = document.createElement("form");
+form_tmp.action = "/bug_search";
+form_tmp.method = "get";
+form_tmp.style.display = "none";
+var input_tmp = document.createElement("textarea");
+input_tmp.name = "key_word";
+input_tmp.value = params;
+form_tmp.appendChild(input_tmp);
+document.body.appendChild(form_tmp);
+form_tmp.submit();
+}
+function search_doc_action() {
+var params = document.getElementById("key_input").value;
+var form_tmp = document.createElement("form");
+form_tmp.action = "/doc_search";
+form_tmp.method = "get";
+form_tmp.style.display = "none";
+var input_tmp = document.createElement("textarea");
+input_tmp.name = "key_word";
+input_tmp.value = params;
+form_tmp.appendChild(input_tmp);
+document.body.appendChild(form_tmp);
+form_tmp.submit();
+}
+</script>
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="http://59.64.79.248/static/#">乌云漏洞搜索系统</a>
+		</div>
+	</div>
+</div>
+<div class="jumbotron masthead">
+	<div class="container">
+		<h1>Wooyun Search</h1>
+		<div class="row-fluid">
+			<div class="span12">
+				<form class="form-horizontal" action="search.php?kind=bugs" method="get" name="login">
+					<div class="input-group">
+						<input type="text" class="form-control " id="keywords" name="keywords" placeholder="输入搜索关键词……">
+						<span class="input-group-btn">
+						<button class="btn btn-default btn-primary" type="submit">立即搜索</button>
+						</span>
+					</div>
+					<br>
+					<div class="form-group">
+						<div class="col-sm-8 col-sm-6">
+							<div class="radio-inline">
+								<label>
+								<input type="radio" name="kind" id="by_bugs" value="bugs" checked="">bugs
+								</label>
+							</div>
+							<div class="radio-inline">
+								<label>
+								<input type="radio" name="kind" id="by_drops" value="drops">drops
+								</label>
+							</div>
+                            <div class="radio-inline">
+								<label>
+								<input type="radio" name="kind" id="by_drops" value="author">author
+								</label>
+							</div>
+						</div>
+						<div class="col-sm-4 col-xs-6">
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="span12">
+				<p>
+				</p>
+				<h4>总计收录 40293 个<a href="http://59.64.79.248/static/search.php?kind=bugs&amp;keywords=">公开漏洞</a>,1269篇<a href="http://59.64.79.248/static/search.php?kind=drops&amp;keywords=">知识库</a></h4>
+				<p>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<footer class="footer">
+<div class="container">
+	<div class="row footer-bottom">
+		<ul class="list-inline text-center">
+			<li><a href="http://59.64.79.248/static/" target="_blank">Wooyun Search</a></li>
+		</ul>
+	</div>
+</div>
+</footer>
+</body>
+</html>
